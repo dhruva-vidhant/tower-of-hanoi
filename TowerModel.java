@@ -47,7 +47,9 @@ public class TowerModel {
     public void move(int source, int destination)
     {
         System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
-        // TODO!!
+        IntegerStack src = towers[source];
+        IntegerStack dest = towers[destination];
+        if(src.peek() < dest.peek()||dest.peek()==0) dest.push(src.pop());
     }
 
     // Helper method to nicely print the current model state.
